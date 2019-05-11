@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 ###################################################
 # This file is just there to hold unused O-Auth   #
 # functionality for later use if required         #
@@ -10,6 +11,7 @@ from oauth2client.client import flow_from_clientsecrets
 
 CLIENT_ID = json.loads(
     open('client_secrets.json', 'r').read())['web']['client_id']
+
 
 @app.route('/api/v1/oauth/<provider>', methods=['POST'])
 @ratelimit(limit=60, per=60 * 1)
@@ -33,8 +35,8 @@ def login(provider):
 
         # Check that the access token is valid.
         access_token = credentials.access_token
-        url = (
-            'https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=%s' % access_token)
+        url = ('https://www.googleapis.com/oauth2/v1/tokeninfo?' +
+               'access_token=%s' % access_token)
         h = httplib2.Http()
         result = json.loads(h.request(url, 'GET')[1])
         # If there was an error in the access token info, abort.
@@ -60,7 +62,8 @@ def login(provider):
         # stored_credentials = login_session.get('credentials')
         # stored_gplus_id = login_session.get('gplus_id')
         # if stored_credentials is not None and gplus_id == stored_gplus_id:
-        #     response = make_response(json.dumps('Current user is already connected.'), 200)
+        #     response = make_response(json.dumps('Current user' +
+        # ' is already connected.'), 200)
         #     response.headers['Content-Type'] = 'application/json'
         #     return response
         print("Step 2 Complete! Access Token : %s " % credentials.access_token)
@@ -94,4 +97,5 @@ def login(provider):
     else:
         return 'Unrecoginized Provider'
 
-    #app.config['SECRET_KEY'] = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in xrange(32))
+    # app.config['SECRET_KEY'] = ''.join(random.choice(
+    # string.ascii_uppercase + string.digits) for x in xrange(32))
