@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Cat Clicker" />
+    <meta name="author" content="Ahmad Sulaeman (asaeles)" />
+    <title>Cat Clicker</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        text-align: center;
+        margin: auto;
+      }
+    </style>
+    <!-- <<<<<<< External Java Scripts >>>>>>> -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <<<<<<< Internal Java Scripts >>>>>>> -->
+    <script src="js/cat.js"></script>
+  </head>
+  <!-- <<<<<<< Body Start >>>>>>> -->
+  <body id="my-body">
+    <!-- <<<<<<< Header Start >>>>>>> -->
+    <header>
+      <h1>Cat Clicker</h1>
+      <p>
+        It's simple, just click the cat image!
+      </p>
+    </header>
+    <aside></aside>
+    <!-- <<<<<<< Container Start >>>>>>> -->
+    <main id="container"></main>
+    <!-- <<<<<<< Footer Start >>>>>>> -->
+    <footer class="pt-4 mt-3 my-md-5 pt-md-5 border-top">
+      <small
+        >&copy; asaeles 1981-<script>
+          document.write(new Date().getFullYear());
+        </script></small
+      >
+    </footer>
+    <script>
+      var cats = [];
+      function showCat(index) {
+        $("main").html(cats[index].template());
+        $("#cat-image").click(function(e) {
+          cats[index].increment();
+        });
+      }
+      // Wait for window load and refresh user and content
+      window.addEventListener("load", function() {
+        var testing = "";
+        var items = [];
+        $.getJSON("cats.json", function(data) {
+          var items = [];
+          $.each(data["cats"], function(key, val) {
+            cats.push(new Cat(val["name"], val["url"]));
+            items.push(
+              '<li id="cat-item-' +
+                key +
+                '"><a href="#" onclick="showCat(' +
+                key +
+                ')">' +
+                val["name"] +
+                "</li>"
+            );
+          });
+          $("aside").html('<ul id="cats-list">' + items.join("") + "</ul>");
+        });
+      });
+    </script>
+  </body>
+</html>

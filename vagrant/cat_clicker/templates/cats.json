@@ -1,0 +1,9 @@
+{
+  "cats": [
+    { "name": "Luna", "url": "https://i.imgur.com/HG2XQP4.jpg" },
+    { "name": "Chloe", "url": "http://fenozi.com/wp-content/uploads/2017/04/cute-cats-8.jpg" },
+    { "name": "Bella", "url": "https://i.ytimg.com/vi/QD_L4FLFj2Y/maxresdefault.jpg" },
+    { "name": "Lucy", "url": "https://catzone-tcwebsites.netdna-ssl.com/wp-content/uploads/2014/09/453768-cats-cute.jpg" },
+    { "name": "Lily", "url": "https://wallpapercave.com/wp/STO4Kja.jpg" }
+  ]
+}
