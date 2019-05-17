@@ -2,9 +2,9 @@
 
 Inspired by a famous Facebook trivial game "Cow Clicker" now its time for cats.
 
-The app is a single web page hosted by a Flask app that display a list of cat names, clicking the name will show the cat's details, clicking the cat image will increment the click count for the selected cat.
+The app is a single web page hosted by a Flask app that displays a list of cat names, clicking any name in the list will show the cat's details, clicking the cat's image will increment the click count for the selected cat.
 
-Additionally, pressing the Admin button will show a form where you cna edit the cat details name, URL and click count.
+Additionally, pressing the Admin button will show a form where you can edit the cat details name, URL and click count.
 
 The app uses local storage to save data.
 
@@ -28,7 +28,7 @@ The VM comes with all the requirements but off the top of my head you'll need:
 
 ## Known Issues
 
-* If cat images are not yet cached by the browser, a delay is noticed in updating the cat image when a selecting different cats.
+* If cat images are not yet cached by the browser, a delay maybe noticed in updating the cat image when selecting different cats
 
 ## Room for improvements
 
