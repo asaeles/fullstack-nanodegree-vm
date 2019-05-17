@@ -13,6 +13,7 @@ class Cat {
 
   increment(num = 1) {
     this.clicks = this.clicks + num;
+    console.log(this.clicks);
     $("#cat-clicks").text(this.clicks);
   }
 

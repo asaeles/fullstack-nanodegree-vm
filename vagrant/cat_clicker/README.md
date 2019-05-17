@@ -1,20 +1,18 @@
 # Cat Clicker
 
-Inspired by a famous Facebook game called "Cow Clicker" this is Cat Clicker.
+Inspired by a famous Facebook trivial game "Cow Clicker" now its time for cats.
 
-It's a single HTML page hosted by a Flask app where you select one of the cats available in the list and clicking on the cat image a click counter is incremented per cat.
+The app is a single web page hosted by a Flask app.
 
 ## Requirements
 
 The VM comes with all the requirements but off the top of my head you'll need:
   * Python2
   * Flask
-  * SQLAlchemy
-  * Redis DB Server
 
 ## Usage
 
-* The app comes with a preset list of cats in the file "cats.json" but of course you can modify this file and it reflects on the page
+* Optional: edit the `cats.json` file to your taste (the file comes with 5 preset cat images)
 
 * Run the Vagrant machine and SSH to it
 
@@ -22,13 +20,15 @@ The VM comes with all the requirements but off the top of my head you'll need:
 
 * Open "http://localhost:5000/" on browser
 
+* Select cat name and then press on its image to increment its click counter
+
 ## Known Issues
 
-* The counter are rest upon refresh
+* Refreshing the page will reset counters
 
 ## Room for improvements
 
-* Adding styles to the page
+* Add styles to the page
 
 ## Contributions
 
