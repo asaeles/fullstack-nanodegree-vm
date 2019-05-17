@@ -16,6 +16,10 @@
         text-align: center;
         margin: auto;
       }
+
+      aside {
+        float: left;
+      }
     </style>
     <!-- <<<<<<< External Java Scripts >>>>>>> -->
     <script
@@ -24,7 +28,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- <<<<<<< Internal Java Scripts >>>>>>> -->
-    <script src="js/cat.js"></script>
+    <script src="js/mvc.js"></script>
   </head>
   <!-- <<<<<<< Body Start >>>>>>> -->
   <body id="my-body">
@@ -35,9 +39,37 @@
         It's simple, just click the cat image!
       </p>
     </header>
-    <aside></aside>
+    <aside>
+      <ul id="cats-list"></ul>
+    </aside>
     <!-- <<<<<<< Container Start >>>>>>> -->
-    <main id="container"></main>
+    <main id="container">
+      <div id="cat-div">
+        <h3 id="cat-name"></h3>
+        <img
+          id="cat-image"
+          style="max-height: 200px;"
+          src=""
+          alt="Cute cat image"
+        />
+        <p>Number of clicks:</p>
+        <h2 id="cat-clicks"></h2>
+      </div>
+    </main>
+    <!-- <<<<<<< Admin Section >>>>>>> -->
+    <section>
+      <button id="admin-button">Admin</button>
+      <form id="admin-form" style="display: none;">
+        <label for="admin-name">Name:</label>
+        <input id="admin-name" type="text" /><br />
+        <label for="admin-url">URL:</label>
+        <input id="admin-url" type="text" /><br />
+        <label for="admin-clicks">Clicks:</label>
+        <input id="admin-clicks" type="text" /><br />
+        <button id="admin-save" type="submit">Save</button>
+        <button id="admin-cancel">Cancel</button>
+      </form>
+    </section>
     <!-- <<<<<<< Footer Start >>>>>>> -->
     <footer class="pt-4 mt-3 my-md-5 pt-md-5 border-top">
       <small
@@ -46,35 +78,5 @@
         </script></small
       >
     </footer>
-    <script>
-      var cats = [];
-      function showCat(index) {
-        $("main").html(cats[index].template());
-        $("#cat-image").click(function(e) {
-          cats[index].increment();
-        });
-      }
-      // Wait for window load and refresh user and content
-      window.addEventListener("load", function() {
-        var testing = "";
-        var items = [];
-        $.getJSON("cats.json", function(data) {
-          var items = [];
-          $.each(data["cats"], function(key, val) {
-            cats.push(new Cat(val["name"], val["url"]));
-            items.push(
-              '<li id="cat-item-' +
-                key +
-                '"><a href="#" onclick="showCat(' +
-                key +
-                ')">' +
-                val["name"] +
-                "</li>"
-            );
-          });
-          $("aside").html('<ul id="cats-list">' + items.join("") + "</ul>");
-        });
-      });
-    </script>
   </body>
 </html>

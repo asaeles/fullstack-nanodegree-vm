@@ -1,9 +1,27 @@
-{
-  "cats": [
-    { "name": "Luna", "url": "http://www.pethealthnetwork.com/sites/default/files/how-do-i-trim-my-kittens-nails524581937.jpg" },
-    { "name": "Chloe", "url": "http://sites.psu.edu/siowfa15/wp-content/uploads/sites/29639/2015/10/cat.jpg" },
-    { "name": "Bella", "url": "https://hairstylecamp.com/wp-content/uploads/cat-1.jpg" },
-    { "name": "Lucy", "url": "http://funlava.com/wp-content/uploads/2013/03/cute-cats-wallpaper.jpg" },
-    { "name": "Lily", "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX7sbQ24kc_kL53W7xQNvio_991tFpoPp-mMZ5Dn9LMo_4h6Sm" }
-  ]
-}
+[
+  {
+    "name": "Luna",
+    "clicks": 0,
+    "url": "http://www.pethealthnetwork.com/sites/default/files/how-do-i-trim-my-kittens-nails524581937.jpg"
+  },
+  {
+    "name": "Chloe",
+    "clicks": 0,
+    "url": "http://sites.psu.edu/siowfa15/wp-content/uploads/sites/29639/2015/10/cat.jpg"
+  },
+  {
+    "name": "Bella",
+    "clicks": 0,
+    "url": "https://hairstylecamp.com/wp-content/uploads/cat-1.jpg"
+  },
+  {
+    "name": "Lucy",
+    "clicks": 0,
+    "url": "http://funlava.com/wp-content/uploads/2013/03/cute-cats-wallpaper.jpg"
+  },
+  {
+    "name": "Lily",
+    "clicks": 0,
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX7sbQ24kc_kL53W7xQNvio_991tFpoPp-mMZ5Dn9LMo_4h6Sm"
+  }
+]

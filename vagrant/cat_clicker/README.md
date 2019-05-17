@@ -1,8 +1,12 @@
-# Cat Clicker
+# Cat Clicker Premium Pro
 
 Inspired by a famous Facebook trivial game "Cow Clicker" now its time for cats.
 
-The app is a single web page hosted by a Flask app.
+The app is a single web page hosted by a Flask app that display a list of cat names, clicking the name will show the cat's details, clicking the cat image will increment the click count for the selected cat.
+
+Additionally, pressing the Admin button will show a form where you cna edit the cat details name, URL and click count.
+
+The app uses local storage to save data.
 
 ## Requirements
 
@@ -24,7 +28,7 @@ The VM comes with all the requirements but off the top of my head you'll need:
 
 ## Known Issues
 
-* Refreshing the page will reset counters
+* If cat images are not yet cached by the browser, a delay is noticed in updating the cat image when a selecting different cats.
 
 ## Room for improvements
 
